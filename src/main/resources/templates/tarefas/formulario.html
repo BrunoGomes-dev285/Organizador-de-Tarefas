@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrando Novas Tarefas</title>
+</head>
+<body>
+<!--/*@thymesVar id="tarefa" type="org.example.tarefas_academicas.model.Tarefa"*/-->
+<form th:action="@{/tarefas}"
+      th:object="${tarefa}"
+      method="post">
+
+    <label>Título</label>
+    <input type="text" th:field="*{titulo}">
+    <span th:if="${#fields.hasErrors('titulo')}"
+          th:errors="*{titulo}">
+    </span>
+    <br>
+    <label>Descricao</label>
+    <input type="text" th:field="*{descricao}">
+    <span th:if="${#fields.hasErrors('descricao')}"
+          th:errors="*{descricao}">
+    </span>
+    <br>
+    <label>Prazo</label>
+    <input type="date" th:field="*{prazo}">
+    <span th:if="${#fields.hasErrors('prazo')}"
+          th:errors="*{prazo}">
+    </span>
+    <br>
+    <label>Prioridade</label>
+    <select th:field = "*{prioridade}">
+        <option>Selecione</option>
+        <option th:each ="item:${prioridade}" th:value ="${item}" th:text ="${item}"></option>
+    </select>
+    <span th:if="${#fields.hasErrors('prioridade')}"
+    th:errors="*{prioridade}">
+    </span>
+    <br>
+
+    <!-- completar os demais campos -->
+    <button type="submit">Cadastrar</button>
+
+    <br>
+
+    <a href="/tarefas">Lista de Tarefas</a>
+</form>
+
+</body>
+</html>

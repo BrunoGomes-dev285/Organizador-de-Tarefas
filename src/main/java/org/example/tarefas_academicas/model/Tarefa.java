@@ -29,7 +29,7 @@ public class Tarefa {
     private Prioridade prioridade;
 
 
-    private StatusTarefa status;
+    private StatusTarefa status = StatusTarefa.PENDENTE;
 
 
     public void concluir() {
@@ -43,5 +43,4 @@ public class Tarefa {
             this.setStatus(StatusTarefa.PENDENTE);
         }
     }
-
 }

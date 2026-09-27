@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Tarefas</title>
+</head>
+<body>
+<h1>Lista de Tarefas</h1>
+<br>
+<a href="/tarefas/formulario">Formulario de Tarefas</a>
+<br>
+<table border="1">
+    <thead>
+    <tr>
+        <td>Titulo</td>
+        <td>Descricao</td>
+        <td>Prazo</td>
+        <td>Prioridade</td>
+        <td>Status</td>
+        <td>Acoes</td>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each ="tarefa:${tarefas}">
+        <td th:text="${tarefa.titulo}"></td>
+        <td th:text="${tarefa.descricao}"></td>
+        <td th:text="${tarefa.prazo}"></td>
+        <td th:text="${tarefa.prioridade}"></td>
+        <td th:text="${tarefa.status}"></td>
+
+    </tr>
+    </tbody>
+
+</table>
+
+</body>
+</html>
